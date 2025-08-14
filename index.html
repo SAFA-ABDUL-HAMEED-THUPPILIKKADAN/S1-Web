@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>website</title>
+
+    <style>
+      h1,
+      h2 {
+        text-align: center;
+      }
+
+      .div2 {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .div1,
+      .div2 {
+        margin-left: 10px;
+        padding-left: 10px;
+        margin-right: 10px;
+        padding-right: 10px;
+      }
+
+      img {
+        width: 500px;
+      }
+      
+      p {
+        width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Web Servers and Web Browsers</h1>
+    <div class="div2">
+      <marquee
+        behavior="alternate"
+        onmouseover="this.stop()"
+        onmouseout="this.start()"
+        ><h3>Latest Updates</h3></marquee
+      >
+      <div class="div1">
+        <h2>Web Browsers</h2>
+        <img src="browser.webp" alt="an image" />
+        <p>
+          A web browser, often referred to as simply a browser, is a software
+          application that enables users to access, retrieve, and view
+          information on the World Wide Web. It acts as a user interface,
+          allowing you to easily interact with websites by rendering content
+          like text, images, and videos on your screen. Essentially, the browser
+          serves as a window to the internet, providing the necessary tools to
+          navigate and utilize online services effectively.
+          <a href="https://developer.mozilla.org/en-US/docs/Glossary/Browser"
+            ><br />Learn More</a
+          >
+        </p>
+      </div>
+      <div class="div3">
+        <h2>Web Servers</h2>
+        <img src="server.png" alt="" />
+        <p>
+          A web server is a computer system that stores and delivers web content
+          to users over the internet. When you enter a URL in your browser, it
+          sends a request to the web server, which retrieves the necessary files
+          (like HTML, CSS, images) and sends them back to your browser for
+          display. These servers are crucial for website hosting and ensuring
+          the smooth functioning of web applications. You can learn more about
+          web servers, including different types and their functions.
+          <a
+            href="https://www.geeksforgeeks.org/node-js/web-server-and-its-type/"
+            ><br />Learn More</a
+          >
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
