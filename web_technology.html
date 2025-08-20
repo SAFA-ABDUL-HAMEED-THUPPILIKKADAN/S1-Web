@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Web Technology</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0 20px;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    h1,
+    h2 {
+      color: #2c3e50;
+    }
+
+    h1 {
+      text-align: center;
+      text-decoration: underline;
+      margin-top: 30px;
+      font-size: 2.8rem;
+    }
+
+    h2 {
+      margin-top: 40px;
+      border-bottom: 2px solid #2980b9;
+      padding-bottom: 8px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 30px 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    ul li {
+      background-color: #2980b9;
+      padding: 8px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    ul li:hover {
+      background-color: #1c5980;
+    }
+
+    
+    img {
+      max-width: 50%;
+      height: auto;
+      display: block;
+      margin: 15px auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    p {
+      max-width: 800px;
+      margin: 0 auto 30px auto;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+
+    a[href="#top"] {
+      display: block;
+      text-align: center;
+      margin: 40px 0 60px 0;
+      color: #2980b9;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    a[href="#top"]:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="div1" id="top">
+    <h1>WEB TECHNOLOGY</h1>
+  <ul>
+    <li><a href="#client">Client/Server</a></li>
+    <li><a href="#components">Components of Web Application</a></li>
+    <li><a href="#types">Types of Web Content</a></li>
+    <li><a href="#http">HTTP-HTTP Request</a></li>
+    <li><a href="#dynamic">Dynamic Webpages</a></li>
+    <li><a href="#application">Application Servers</a></li>
+    <li><a href="#security">Web Security</a></li>
+  </ul>
+  </div>
+  
+  <div id="client">
+    <h2>CLIENT/SERVER</h2>
+    <img src="ClientServer.webp" alt="Client Server Model" />
+    <p>
+      The client/server model is a network architecture where the client
+      requests services or resources, and the server provides them. Clients
+      are typically user-facing devices or applications, while servers are
+      powerful systems that store data, run applications, or manage network
+      resources. This model is the foundation of modern web services, allowing
+      efficient communication and data exchange over the internet.
+    </p>
+  </div>
+  <div id="components">
+    <h2>COMPONENTS OF WEB APPLICATION</h2>
+    <img src="components.jpg" alt="Web Application Components" />
+    <p>
+      A web application has three main components: the client-side,
+      server-side, and database. The client-side (or frontend) runs in the
+      user's browser and handles the user interface using HTML, CSS, and
+      JavaScript. The server-side (or backend) processes requests, runs logic,
+      and communicates with the database. The database stores and manages the
+      application's data. These components work together to deliver dynamic,
+      interactive web experiences.
+    </p>
+  </div>
+  <div id="types">
+    <h2>TYPES OF WEB CONTENT</h2>
+    <img src="typesofwebcontent.jpg" alt="Types of Web Content" />
+    <p>
+      Web content can be broadly divided into three types: static, dynamic,
+      and interactive. Static content includes fixed information like text,
+      images, or videos that don’t change unless updated manually. Dynamic
+      content is generated in real-time based on user input or data, such as
+      personalized dashboards or search results. Interactive content involves
+      user engagement, like forms, quizzes, or chat features, making the web
+      experience more engaging and responsive.
+    </p>
+  </div>
+  <div id="http">
+    <h2>HTTP-HTTP REQUEST</h2>
+    <img src="httpworking.png" alt="HTTP Working" />
+    <p>
+      HTTP (HyperText Transfer Protocol) is the foundation of data
+      communication on the web. It defines how messages are formatted and
+      transmitted between a client (like a browser) and a server. An HTTP
+      request is sent by the client to ask the server for something — such as a
+      web page, image, or data. It includes components like a method (e.g.,
+      GET, POST), a URL, headers, and sometimes a body. The server then
+      processes the request and sends back an HTTP response.
+    </p>
+  </div>
+  <div id="dynamic">
+    <h2>DYNAMIC WEBPAGES</h2>
+    <img src="dynamic.webp" alt="Dynamic Webpages" />
+    <p>
+      Dynamic webpages are web pages that can change content in real-time,
+      often based on user input or data from a server. Unlike static pages,
+      which stay the same for every visitor, dynamic pages use server-side
+      scripting (like PHP, Node.js) or client-side scripting (like JavaScript)
+      to update content. Examples include login pages, search results, or
+      social media feeds. They make websites more interactive, personalized,
+      and responsive to user actions.
+    </p>
+  </div>
+  <div id="application">
+    <h2>APPLICATION SERVERS</h2>
+    <img src="application server.webp" alt="Application Servers" />
+    <p>
+      An application server is a type of software that runs business logic
+      for web applications. It sits between the web server and the database,
+      handling tasks like processing user requests, managing sessions, and
+      connecting to databases. Unlike a basic web server that only delivers
+      static content, an application server can generate dynamic content,
+      support APIs, and run backend code (like Java, .NET, or Python).
+      Examples include Apache Tomcat, GlassFish, and WildFly.
+    </p>
+  </div>
+  <div id="security">
+    <h2>WEB SECURITY</h2>
+    <img src="security.jpg" alt="Web Security" />
+    <p>
+      Web security refers to the measures taken to protect websites and web
+      applications from threats like unauthorized access, data theft, or
+      cyberattacks. Common security practices include using HTTPS for secure
+      communication, authentication (like login systems), input validation to
+      prevent attacks like SQL injection or XSS (Cross-Site Scripting), and
+      firewalls to block harmful traffic. Strong web security helps ensure
+      confidentiality, integrity, and availability of data.
+    </p>
+  </div>
+  <a href="#top">Back to Top</a>
+</body>
+</html>
