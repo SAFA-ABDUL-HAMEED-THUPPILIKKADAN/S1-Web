@@ -1,0 +1,11 @@
+/* External CSS with ID selector */
+#special {
+  font-size: 18px;
+  border: 2px dashed #000;  /* black border */
+  padding: 12px;
+  text-align: center;
+  border-radius: 6px;
+  background-color:whitesmoke;
+  color:black;         
+  margin-top: 20px;
+}
