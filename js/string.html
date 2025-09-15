@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>String length</h1>
+    Enter a String
+    <input type="text" name="" id="str">
+    <h3 id="len"></h3>
+    <button onclick="length()">Length</button>
+    <button onclick="slice()">Slice</button>
+    <button onclick="string()">Length</button>
+    <button onclick="string()">Length</button>
+    <button onclick="string()">Length</button>
+    <button onclick="string()">Length</button>
+    <button onclick="string()">Length</button>
+</body>
+<script>
+    function length()
+    {
+        let x=document.getElementById("str").value;
+        let y=x.length;
+        document.getElementById("len").innerHTML="Length of the string = "+y;
+    }
+
+    function slice()
+    {
+        let x=document.getElementById("str").value;
+        let y=x.length;
+        document.getElementById("len").innerHTML="Length of the string = "+y;
+    }
+</script>
+</html>
