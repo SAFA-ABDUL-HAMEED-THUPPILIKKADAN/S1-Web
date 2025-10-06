@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mouse Events Example</title>
+</head>
+<body>
+  <h1>Change content when mouse come over</h1>
+  <img src="browser.jpg" alt="Browser Image" id="img" width="300">
+  <p id="txt">
+    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, 
+    by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of 
+    Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum 
+    generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the 
+    Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate 
+    Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, 
+    or non-characteristic words etc.
+  </p>
+
+  <script>
+    // Store original text
+    let originalText = document.getElementById("txt").innerHTML;
+
+    // Mouseover changes text
+    document.getElementById("txt").addEventListener("mouseover", function() {
+      document.getElementById("txt").innerHTML = 
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
+    });
+
+    // Mouseout restores original text
+    document.getElementById("txt").addEventListener("mouseout", function() {
+      document.getElementById("txt").innerHTML = originalText;
+    });
+
+    // Store original image
+    let originalImg = document.getElementById("img").src;
+
+    // Mouseover changes image
+    document.getElementById("img").addEventListener("mouseover", function() {
+      document.getElementById("img").src = "browser.webp";
+    });
+
+    // Mouseout restores original image
+    document.getElementById("img").addEventListener("mouseout", function() {
+      document.getElementById("img").src = originalImg;
+    });
+  </script>
+</body>
+</html>

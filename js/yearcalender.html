@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Calendar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    table {
+      border-collapse: collapse;
+      margin: 10px 0;
+      width: 250px;
+    }
+    th, td {
+      border: 1px solid black;
+      text-align: center;
+      padding: 5px;
+    }
+    .month {
+      display: inline-block;
+      margin: 10px;
+      vertical-align: top;
+    }
+    h3 {
+      text-align: center;
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <h2>Calendar</h2>
+  <label>Enter Year: </label>
+  <input type="number" id="year">
+  <button onclick="printCalendar()">Show</button>
+
+  <div id="output"></div>
+
+  <script>
+    function printCalendar() {
+      let year = document.getElementById("year").value;
+      if (!year) {
+        alert("Please enter a year");
+        return;
+      }
+
+      const months = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+      ];
+
+      const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+      let result = "";
+
+      for (let m = 0; m < 12; m++) {
+        result += `<div class='month'><h3>${months[m]} ${year}</h3>`;
+        result += "<table><tr>";
+
+        // Add day names
+        for (let d = 0; d < 7; d++) {
+          result += `<th>${days[d]}</th>`;
+        }
+        result += "</tr><tr>";
+
+        let firstDay = new Date(year, m, 1).getDay();
+        let daysInMonth = new Date(year, m + 1, 0).getDate();
+
+        // Empty cells for days before the 1st
+        for (let i = 0; i < firstDay; i++) {
+          result += "<td></td>";
+        }
+
+        // Fill the days
+        for (let day = 1; day <= daysInMonth; day++) {
+          result += `<td>${day}</td>`;
+          if ((day + firstDay) % 7 === 0) result += "</tr><tr>";
+        }
+
+        // Fill remaining cells to complete last week
+        let remaining = (7 - (daysInMonth + firstDay) % 7) % 7;
+        for (let i = 0; i < remaining; i++) {
+          result += "<td></td>";
+        }
+
+        result += "</tr></table></div>";
+      }
+
+      document.getElementById("output").innerHTML = result;
+    }
+  </script>
+</body>
+</html>

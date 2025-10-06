@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Math Functions</h2>
+    Enter a number:
+    <input type="number" name="" id="num"><br><br>
+    <button onclick="power()">Power</button>
+    <button onclick="sqrt()">Square root</button>
+    <button onclick="abs()">Absolute</button>
+    <button onclick="ceil()">Ceil</button>
+    <button onclick="floor()">Floor</button>
+    <button onclick="round()">Round</button>
+    <h3 id="result"></h3>
+
+<!-- Demonstrating string functions-->
+    <br><br>
+<h2><u>String Functions</u></h2>
+<label>Enter a string :</label>
+<input type="text" name="" id="str"><br><br>
+<button OnClick="stringLength()">length</button>
+<button OnClick="subString()">substring</button>
+<button OnClick="search()">search</button>
+<button OnClick="strConcat()">Concatenation</button>
+<button OnClick="toUpper()">Uppercase</button>
+<button OnClick="toLower()">Lowercase</button>
+
+
+<h3 id="res"></h3>
+</body>
+<script>
+    function power()
+    {
+        x=parseInt(document.getElementById("num").value);
+        y=parseInt(prompt("Enter the power value:"));
+        res=Math.pow(x,y);
+        document.getElementById("result").innerHTML=x+"^"+y+" is "+res 
+
+    }
+    function sqrt()
+    {
+        x=parseInt(document.getElementById("num").value);
+        res=Math.sqrt(x);
+        document.getElementById("result").innerHTML="Square root of "+x+" is "+res
+    }
+    function abs()
+    {
+        x=parseInt(document.getElementById("num").value);
+        res=Math.abs(x);
+        document.getElementById("result").innerHTML="Absolute of "+x+" is "+res
+    }
+    function ceil()
+    {
+        x=parseFloat(document.getElementById("num").value);
+        res=Math.ceil(x);
+        document.getElementById("result").innerHTML="Ceil of "+x+" is "+res
+    }
+    function floor()
+    {
+        x=parseFloat(document.getElementById("num").value);
+        res=Math.floor(x);
+        document.getElementById("result").innerHTML="Floor of "+x+" is "+res
+    }
+    function round()
+    {
+        x=parseFloat(document.getElementById("num").value);
+        res=Math.round(x);
+        document.getElementById("result").innerHTML="Round of "+x+" is "+res
+    }
+    
+    function stringLength()
+    {
+        var str=document.getElementById("str").value;
+        var length=str.length;
+        document.getElementById("res").innerHTML="Length of the string :"+length;
+
+    }
+    function subString()
+    {
+        let str = document.getElementById("str").value;
+        let x = prompt("Enter first index: ");
+        let y = prompt("Enter end index: ");
+        let z = str.substr(x,y);
+        document.getElementById("res").innerHTML = "Substring is "+z;
+    }
+    function search()
+    {
+        let str = document.getElementById("str").value;
+        let str1 = prompt("Enter the letter to search: ");
+        let x = str.search(str1);
+        document.getElementById("res").innerHTML = "The letter "+str1+" is located at the position "+x;
+    }
+    function strConcat()
+    {
+        let str=document.getElementById("str").value;
+        let str1=prompt("Enter the second string :");
+        let x=str.concat(str1);
+        document.getElementById("res").innerHTML=""+x;
+    }
+    function toUpper()
+    {
+        let str=document.getElementById("str").value;
+        let upper_text=str.toUpperCase();
+        document.getElementById("res").innerHTML=""+upper_text;
+    }
+    function toLower()
+    {
+        let str=document.getElementById("str").value;
+        let lower_text=str.toLowerCase();
+        document.getElementById("res").innerHTML=""+lower_text;
+    }
+
+    
+</script>
+
+</html>

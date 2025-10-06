@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Calender</h2>
+    Enter a year:
+    <input type="number" name="" id="year"><br><br>
+    Select Month:
+      <select id="month">
+        <option value="0">January</option>
+        <option value="1">February</option>
+        <option value="2">March</option>
+        <option value="3">April</option>
+        <option value="4">May</option>
+        <option value="5">June</option>
+        <option value="6">July</option>
+        <option value="7">August</option>
+        <option value="8">September</option>
+        <option value="9">October</option>
+        <option value="10">November</option>
+        <option value="11">December</option>
+      </select><br><br>
+    <button onclick="calender()">Calender</button>
+    <p id="abc"></p>
+</body>
+<script>
+    function calender()
+    {
+         var yr = document.getElementById("year").value;
+        var m = document.getElementById("month").value;
+        yr = Number(yr);
+        m = Number(m);
+        var d =
+          "<table border='1' ><tr><th>SUN</th><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th></tr><tr>";
+        var c = new Date(yr, m);
+        var day = c.getDay();
+        for (var i = 0; i < day; i++) {
+          d += "<td></td>";
+        }
+        while (c.getMonth() == m) {
+          d += "<td>" + c.getDate() + "</td>";
+          if (c.getDay() % 7 == 6) {
+            d += "</tr><tr>";
+          }
+          c.setDate(c.getDate() + 1);
+        }
+        var t = "</table>";
+        d += t;
+        document.getElementById("abc").innerHTML = d;
+    }
+</script>
+</html>
