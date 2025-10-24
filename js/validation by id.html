@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="">
+        Enter Name:
+        <input type="text" name="" id="name"><br><br>
+        Enter a number:
+        <input type="text" name="" id="num"><br><br>
+        <button onclick="validation()">Click Me</button>
+    </form>
+</body>
+<script>
+    function validation()
+    {
+        let x=document.getElementById("name").value;
+        if(x==="")
+        {
+            alert("Name not be empty");
+        }
+        let y=document.getElementById("num").value;
+        if(isNaN(y))
+        {
+            alert("Enter a number");
+        }
+    }
+</script> 
+
+</html>

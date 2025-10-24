@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <style>
+    body {
+      background: #fff;
+      color: #000;
+      font-family: Arial, sans-serif;
+    }
+    table {
+      border-collapse: collapse;
+      margin: 20px auto;
+      width: 60%;
+      background: #fff;
+    }
+    th {
+      background: #000;  
+      color: #fff;
+      padding: 10px;
+      font-size: 18px;
+    }
+    td {
+      padding: 8px;
+      border: 1px solid #000;
+    }
+    input[type="text"],
+    input[type="number"],
+    input[type="password"],
+    input[type="email"],
+    input[type="file"] {
+      width: 95%;
+      padding: 5px;
+      border: 1px solid #000;
+      border-radius: 3px;
+      background: #fff;
+      color: #000;
+    }
+    input[type="submit"],
+    input[type="reset"],
+    button {
+      padding: 6px 12px;
+      margin: 5px;
+      border: 1px solid #000;
+      background: #fff;
+      color: #000;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 3px;
+    }
+    input[type="submit"]:hover,
+    input[type="reset"]:hover,
+    button:hover {
+      background: #000;
+      color: #fff;
+    }
+    marquee h1 {
+      color: #000;
+    }
+    p {
+      color: red;
+      font-size: 13px;
+      margin: 3px 0 0 0;
+    }
+    .required {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <marquee behavior="alternate" onmouseover="this.stop()" onmouseout="this.start()">
+    <h1>WELCOME TO FRESHER'S WORLD !!!</h1>
+  </marquee>
+
+  <form action="" name="rform" onsubmit="return validate()">
+    <table>
+      <tr>
+        <th colspan="3">Registration Form</th>
+      </tr>
+
+      <tr>
+        <td>Name<span class="required">*</span></td>
+        <td colspan="2"><input type="text" name="name">
+        <p id="nv"></p></td>
+      </tr>
+
+      <tr>
+        <td>Age<span class="required">*</span></td>
+        <td colspan="2"><input type="number" name="age">
+        <p id="av"></p></td>
+      </tr>
+
+      <tr>
+        <td>Password<span class="required">*</span></td>
+        <td colspan="2"><input type="password" name="pass">
+        <p id="pv"></p></td>
+      </tr>
+
+      <tr>
+        <td>Re-enter Password<span class="required">*</span></td>
+        <td colspan="2"><input type="password" name="repass">
+        <p id="rpv"></p></td>
+      </tr>
+
+      <tr>
+        <td rowspan="4">Select your security question<span class="required">*</span></td>
+        <td colspan="2"><input type="radio" name="sec" value="pet">What is your pet name?</td>
+      </tr>
+      <tr>
+        <td colspan="2"><input type="radio" name="sec" value="friend">Who is your bestfriend?</td>
+      </tr>
+      <tr>
+        <td colspan="2"><input type="radio" name="sec" value="color">What is your favourite colour?</td>
+      </tr>
+      <tr>
+        <td colspan="2"><input type="radio" name="sec" value="teacher">Who is your favourite teacher?</td>
+      </tr>
+
+      <tr>
+        <td>Answer of security question<span class="required">*</span></td>
+        <td colspan="2"><input type="text" name="ans">
+        <p id="ansv"></p></td>
+      </tr>
+
+      <tr>
+        <td>Email id<span class="required">*</span></td>
+        <td colspan="2"><input type="email" name="email">
+        <p id="ev"></p></td>
+      </tr>
+
+      <tr>
+        <td>Languages Known</td>
+        <td colspan="2">
+          <input type="checkbox" name="lang" value="Malayalam">Malayalam 
+          <input type="checkbox" name="lang" value="English">English 
+          <input type="checkbox" name="lang" value="Hindi">Hindi
+        </td>
+      </tr>
+
+      <tr>
+        <td rowspan="2">Phone Number</td>
+        <td>Home</td>
+        <td>Office</td>
+      </tr>
+      <tr>
+        <td><input type="number" name="home"></td>
+        <td><input type="number" name="office"></td>
+      </tr>
+
+      <tr>
+        <td>Upload CV</td>
+        <td colspan="2"><input type="file" name="cv"></td>
+      </tr>
+
+      <tr>
+        <td><input type="reset" value="RESET"></td>
+        <td colspan="2"><button type="submit">SUBMIT</button></td>
+      </tr>
+    </table>
+  </form>
+
+  <script>
+    function validate() {
+      let name = document.forms["rform"]["name"].value.trim();
+      let age = document.forms["rform"]["age"].value.trim();
+      let pass = document.forms["rform"]["pass"].value;
+      let repass = document.forms["rform"]["repass"].value;
+      let email = document.forms["rform"]["email"].value.trim();
+      let ans = document.forms["rform"]["ans"].value.trim();
+      let sec = document.forms["rform"]["sec"].value;
+
+      // Clear old messages
+      document.getElementById("nv").innerHTML = "";
+      document.getElementById("av").innerHTML = "";
+      document.getElementById("pv").innerHTML = "";
+      document.getElementById("rpv").innerHTML = "";
+      document.getElementById("ev").innerHTML = "";
+      document.getElementById("ansv").innerHTML = "";
+
+      // Validation checks
+      if (name === "") {
+        document.getElementById("nv").innerHTML = "Name cannot be empty";
+        return false;
+      }
+      if (age === "" || age <= 0) {
+        document.getElementById("av").innerHTML = "Please enter a valid age";
+        return false;
+      }
+      if (pass === "") {
+        document.getElementById("pv").innerHTML = "Password cannot be empty";
+        return false;
+      }
+      if (pass.length < 8) {
+        document.getElementById("pv").innerHTML = "Password must have at least 8 characters";
+        return false;
+      }
+      if (repass === "") {
+        document.getElementById("rpv").innerHTML = "Please re-enter the password";
+        return false;
+      }
+      if (pass !== repass) {
+        document.getElementById("rpv").innerHTML = "Passwords do not match";
+        return false;
+      }
+      if (!sec) {
+        alert("Please select a security question");
+        return false;
+      }
+      if (ans === "") {
+        document.getElementById("ansv").innerHTML = "Please answer the security question";
+        return false;
+      }
+      if (email === "") {
+        document.getElementById("ev").innerHTML = "Email cannot be empty";
+        return false;
+      }
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!email.match(emailPattern)) {
+        document.getElementById("ev").innerHTML = "Invalid email format";
+        return false;
+      }
+
+      alert("Form submitted successfully!");
+      return true;
+    }
+  </script>
+</body>
+</html>
