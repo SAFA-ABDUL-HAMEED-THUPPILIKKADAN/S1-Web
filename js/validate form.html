@@ -164,6 +164,9 @@
 
   <script>
     function validate() {
+      let valid = true;
+
+      // Get form values
       let name = document.forms["rform"]["name"].value.trim();
       let age = document.forms["rform"]["age"].value.trim();
       let pass = document.forms["rform"]["pass"].value;
@@ -180,51 +183,66 @@
       document.getElementById("ev").innerHTML = "";
       document.getElementById("ansv").innerHTML = "";
 
-      // Validation checks
+      // Validate name
       if (name === "") {
         document.getElementById("nv").innerHTML = "Name cannot be empty";
-        return false;
-      }
-      if (age === "" || age <= 0) {
-        document.getElementById("av").innerHTML = "Please enter a valid age";
-        return false;
-      }
-      if (pass === "") {
-        document.getElementById("pv").innerHTML = "Password cannot be empty";
-        return false;
-      }
-      if (pass.length < 8) {
-        document.getElementById("pv").innerHTML = "Password must have at least 8 characters";
-        return false;
-      }
-      if (repass === "") {
-        document.getElementById("rpv").innerHTML = "Please re-enter the password";
-        return false;
-      }
-      if (pass !== repass) {
-        document.getElementById("rpv").innerHTML = "Passwords do not match";
-        return false;
-      }
-      if (!sec) {
-        alert("Please select a security question");
-        return false;
-      }
-      if (ans === "") {
-        document.getElementById("ansv").innerHTML = "Please answer the security question";
-        return false;
-      }
-      if (email === "") {
-        document.getElementById("ev").innerHTML = "Email cannot be empty";
-        return false;
-      }
-      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-      if (!email.match(emailPattern)) {
-        document.getElementById("ev").innerHTML = "Invalid email format";
-        return false;
+        valid = false;
       }
 
-      alert("Form submitted successfully!");
-      return true;
+      // Validate age
+      if (age === "" || age <= 0) {
+        document.getElementById("av").innerHTML = "Please enter a valid age";
+        valid = false;
+      }
+
+      // Validate password
+      if (pass === "") {
+        document.getElementById("pv").innerHTML = "Password cannot be empty";
+        valid = false;
+      } else if (pass.length < 8) {
+        document.getElementById("pv").innerHTML = "Password must contain at least 8 characters";
+        valid = false;
+      }
+
+      // Validate re-entered password
+      if (repass === "") {
+        document.getElementById("rpv").innerHTML = "Please re-enter the password";
+        valid = false;
+      } else if (pass !== repass) {
+        document.getElementById("rpv").innerHTML = "Passwords do not match";
+        valid = false;
+      }
+
+      // Validate security question
+      if (!sec) {
+        alert("Please select a security question");
+        valid = false;
+      }
+
+      // Validate answer
+      if (ans === "") {
+        document.getElementById("ansv").innerHTML = "Please answer the security question";
+        valid = false;
+      }
+
+      // Validate email
+      if (email === "") {
+        document.getElementById("ev").innerHTML = "Email cannot be empty";
+        valid = false;
+      } else {
+        const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+        if (!email.match(emailPattern)) {
+          document.getElementById("ev").innerHTML = "Invalid email format";
+          valid = false;
+        }
+      }
+
+      // Show message only if all fields are valid
+      if (valid) {
+        alert("Form submitted successfully!");
+      }
+
+      return valid; // true allows submit, false prevents
     }
   </script>
 </body>
